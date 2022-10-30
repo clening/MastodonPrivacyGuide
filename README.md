@@ -2,6 +2,14 @@
 
 A guide on data protection obligations, challenges & pitfalls for Mastodon Users & Instance owners / admins.
 
+[MastodonPrivacyGuide](#mastodonprivacyguide)
+  * [Who Are You and Why Should I Trust You?](#who-are-you-and-why-should-i-trust-you)
+  * [Scope](#scope)
+  * [But I Thought the GDPR (etc) Doesn't Apply to Me](#but-i-thought-the-gdpr--etc--doesn-t-apply-to-me)
+    + [What is Processing?](#what-is-processing)
+  * [Well This is Harshing My Mellow](#well-this-is-harshing-my-mellow)
+  * [Fine, Fine. The Data Protection Laws May Apply. Now What?](#fine--fine-the-data-protection-laws-may-apply-now-what)
+  * 
 ## Who Are You and Why Should I Trust You?
 Name is Carey (@privacat@freeradical.zone / @privacat on the Birdsite) and I am an External Data Protection Consultant, researcher, and general buzzkill who focuses on helping organisations and individuals understand and comply with data protection laws. I work for a small outfit out of Dublin, Ireland, [Castlebridge](castlebridge.ie).
 
@@ -32,6 +40,52 @@ As I mentioned in the Scope section, I hate to say it, but it probably does. Let
 
 > This Regulation protects fundamental rights and freedoms of natural persons and in particular their right to the protection of personal data.
 
+All of that is legal speak for the fact that the law covers how data is handled (processed) when it concerns people (data subjects or natural persons). 
+
+[Article 3 GDPR](https://gdpr-info.eu/art-3-gdpr/) clarifies that the regulation applies 
+> ... to the processing of personal data in the context of the activities of an **establishment** of a **controller or a processor** in the Union, regardless of whether the processing takes place in the Union or not.
+
+> This Regulation applies to the processing of personal data of **data subjects who are in the Union** by a **controller or processor not established in the Union**, where the processing activities are related to:
+> - the offering of goods or services, **irrespective of whether a payment of the data subject is required**, to such data subjects in the Union; or
+> - the **monitoring of their behaviour** as far as their behaviour takes place within the Union.
+
+## Some Relevant Definitions [^2] 
+
+### Isn't Personal Data Just PII and Stuff? I'm not Collecting Any of That... 
+Unlike in the States, 'personal data' has a very broad definition: 
+> Personal Data means **any information relating to an identified or identifiable natural person (‘data subject’)**; an identifiable natural person is one who can be identified, **directly or indirectly**, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person. 
+
+The key words here are bolded. Anything that identifies, or can identify (with other information) a person. A natural person is fancy lawyer for "a living, breathing human being".[^3]
+
+Identifiability is a core concept in the GDPR, and is quite broad. There are cases that note that even something like a dynamic IP address, Google Analytics IDs, or information about a person's spouse constitutes identifiable informaiton about a data subject.[^4] 
+
+People share a lot in toots - details about their sexuality and sexual orientation, health information (including mental and physical health), contact information, others they associate with, their dates of birth, photos... 
+
+### WTF is Processing?
+First thing's first, let's talk about processing. Processing is a broad term, and it means 
+> any operation or set of operations which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction. 
+
+In plain English: If you are doing something with personal data, on a computer (or physically), you're probably processing data in some way. Common Fedi examples of processing: 
+1. Your instance **collects and stores** user information such as email address, userid, IP address, biographical information, photos of data subjects, etc.
+2. Your instance **collects and stores** all those lovely toots. 
+3. Based on how Mastodon works, your servers automatically perform various operations on the data (checking for spam, blocking Nazis) (**restricting data, erasing data**)
+4. By virtue of being #federated, your instance **shares, transmits, and disseminates** personal data about users and their toots with _other_ users across systems (unless you defederate from everyone).
+5. By allowing users to Boost, comment on, bookmark or link to profiles or toots your instance is **adapting and altering** that personal information. 
+6. If you've got any sort of analytics going (Google Analytics, or even Matomo), you're likely **collecting, storing, transmitting, and using** device IDs, advertising IDs, IP information and other details about visitors to your site. 
+7. By storing any of this on a server somewhere that's not your own, you're also **transmitting** personal data.
+
+So yeah, you're 100% absolutely processing data. Sorry champ. 
+
+### Controllers & Processors, how do they work?
+
+
+### What's a Data Subject? 
+As noted above, a data subject or natural person is a human being, usually one who's still alive who is based in the EU. Even if the person is just visiting the EU, or isn't an EU citizen, that still counts. In the US, the CCPA and various other CCPA-like laws apply similar definitions to data subjects based in those respective jurisdictions.  
+
+### What the hell does Establishment mean? 
+
+### Monitoring Behavior? 
+
 
 
 
@@ -43,3 +97,7 @@ Things to Consider
 2.
 
 [^1]: gdpr-info.eu is a very helpful source, but it is not the authoritative source. That said, I use it a lot because it's MUCH cleaner and easier to search compared to the legislation itself, which can be found here: [REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL](https://eur-lex.europa.eu/eli/reg/2016/679/oj). 
+[^2]: Most GDPR definitions can be found under Article 4: [Article 4](https://gdpr-info.eu/art-4-gdpr/)
+[^3]: But because lawyers, not always! Sometimes, dead people also have data protection rights, whee!!!
+[^4]: CJEU, C‑582/14 Patrick Breyer (19.10.2016) (Dynamic IP address); CJEU, C‑184/20 - Vyriausioji Tarnybinės Etikos Komisija (01.08.2022) (sexual orientation inferred from disclosure of inhabitant/spouse/partner); Garante per la protezione dei dati personali (Italy) (Case No. 
+9668051, 09.06.2022) (Google Analytics) [There are a half dozen of these cases].
