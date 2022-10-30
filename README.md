@@ -77,7 +77,15 @@ In plain English: If you are doing something with personal data, on a computer (
 So yeah, you're 100% absolutely processing data. Sorry champ. 
 
 ### Controllers & Processors, how do they work?
+Controllers and processors have legal meaning. A controller is: 
+> ... the **natural or legal person**, public authority, agency or other body which, alone or jointly with others, determines the **purposes and means of the processing** of personal data; where the purposes and means of such processing are determined by Union or Member State law, the controller or the specific criteria for its nomination may be provided for by Union or Member State law. 
 
+So, a few important notes: 1) This doesn't just apply to big behemoth companies. Anyone can be a controller (in fact, there's caselaw on this). 2) the concept of determining 'purposes and means' is complicated, but in essence, a way to think about it is the person/body who is making decisions about how data is being used/stored/collected/shared/disseminated etc. 
+
+**A few examples**: 
+1. You decided that you wanted to run a Mastodon instance and allow random users to join.[^5] 
+2. You decide what servers you want to federate with or defederate. That is making a decision about the means of processing. 
+3. 
 
 ### What's a Data Subject? 
 As noted above, a data subject or natural person is a human being, usually one who's still alive who is based in the EU. Even if the person is just visiting the EU, or isn't an EU citizen, that still counts. In the US, the CCPA and various other CCPA-like laws apply similar definitions to data subjects based in those respective jurisdictions.  
@@ -101,3 +109,6 @@ Things to Consider
 [^3]: But because lawyers, not always! Sometimes, dead people also have data protection rights, whee!!!
 [^4]: CJEU, C‑582/14 Patrick Breyer (19.10.2016) (Dynamic IP address); CJEU, C‑184/20 - Vyriausioji Tarnybinės Etikos Komisija (01.08.2022) (sexual orientation inferred from disclosure of inhabitant/spouse/partner); Garante per la protezione dei dati personali (Italy) (Case No. 
 9668051, 09.06.2022) (Google Analytics) [There are a half dozen of these cases].
+[^5]: I highlight this here for one reason: Under the GDPR and other laws, there are usually exceptions for purely 'household or personal use'. It's why email providers like Protonmail are generally considered processors, but not controllers and the data they manage -- and the controller is the data subject [Recital 18](https://gdpr-info.eu/recitals/no-18/). They're not generally making decisions on the means and purposes of processing -- that's being decided by the data subjects themelves. By contrast, Google does all sorts of stuff with email - all that smart suggestions nonsense, and targeted advertising, and bubbling up helpful suggestions. They're firmly in the controller camp. 
+
+Based on the kinds of leeway that admins of instances get, and some recent decisions, notably the 2019 _Fashion ID_ case (CJEU, C-40/17 - Fashion ID), instance admins are _likely_ to be seen as controllers or at least joint controllers.  
