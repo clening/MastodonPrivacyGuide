@@ -106,8 +106,21 @@ Generally, this isn't applicable yet, so I'll update this when Mastodon gets exc
 ## Okay. The Data Protection Laws May Apply. Now What?
 Things to Consider
 
-1. As a controller you've got many obligations. Even  - It's more than just a Privacy Notice/Policy
-2.
+1. As a controller you've got many obligations, beyond just the standard boilerplate Mastodon Privacy Notice. Controllers must, at a minimum: 
+ a. Need to ensure that adequate 'technical and organisational' measures are in place to meet obligations under the GDPR. In simple terms, that means things like
+  - securing data in transit and at rest; 
+  - ensuring that access controls and authorisation are strong (strong passwords, limits on access by others to personal data of your users);
+  - appropriate auditing and logging of data; 
+  - limiting (to the extent possible) how long data is retained and stored on your system and for how long; [^6]
+  - clearly defining what types of data you collect about your users and why you collect it; 
+  - identifying the legal grounds for collecting this data (arguably, consent of users who register on your site, or potentially compliance with contractual obligations [See: [Article 6(2)](https://gdpr-info.eu/art-6-gdpr/)];
+  - providing details about who you are as the controller, including some contact information; 
+  - setting up processes to handle Data Subject Requests (including access, rectification, deletion and objections to processing) under Articles 15-22; 
+  - setting up processes to handle and respond to data breaches under Articles 33-34, including notifying relevant regulators and data subjects;
+  - setting up appropriate policies and procedures for complying; 
+  - ensuring that contracts are in place when transferring data (for example, if you host on AWS, GCP, Azure, etc.). 
+  - It's more than just a Privacy Notice/Policy
+3.
 
 [^1]: gdpr-info.eu is a very helpful source, but it is not the authoritative source. That said, I use it a lot because it's MUCH cleaner and easier to search compared to the legislation itself, which can be found here: [REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL](https://eur-lex.europa.eu/eli/reg/2016/679/oj). 
 [^2]: Most GDPR definitions can be found under Article 4: [Article 4](https://gdpr-info.eu/art-4-gdpr/)
@@ -117,3 +130,5 @@ Things to Consider
 [^5]: I highlight this here for one reason: Under the GDPR and other laws, there are usually exceptions for purely 'household or personal use'. It's why email providers like Protonmail are generally considered processors, but not controllers and the data they manage -- and the controller is the data subject [Recital 18](https://gdpr-info.eu/recitals/no-18/). They're not generally making decisions on the means and purposes of processing -- that's being decided by the data subjects themelves. By contrast, Google does all sorts of stuff with email - all that smart suggestions nonsense, and targeted advertising, and bubbling up helpful suggestions. They're firmly in the controller camp. 
 
 Based on the kinds of leeway that admins of instances get, and some recent decisions, notably the 2019 _Fashion ID_ case (CJEU, C-40/17 - Fashion ID), instance admins are _likely_ to be seen as controllers or at least joint controllers.  
+
+[^6]: I absolutely get that this is hard, because once data is shared with other servers/users, it may be effectively impossible to claw it back. ## I would love some additional insights here on the standards to provide a better set of suggestions. 
