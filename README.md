@@ -131,7 +131,7 @@ As a controller you've got many obligations, beyond just the standard boilerplat
   - securing data in transit and at rest; 
   - ensuring that access controls and authorisation are strong (strong passwords, limits on access by others to personal data of your users);
   - appropriate auditing and logging of data; 
-  - limiting (to the extent possible) how long data is retained and stored on your system and for how long; [^6]
+  - limiting (to the extent possible) how long data is retained and stored on your system and for how long. This is especially true for things like IP addresses, deleted content/accounts, cookie data, etc. Essentially, if you don't need to keep it, treat it like hazardous waste and destroy it; [^6]
   - clearly defining what types of data you collect about your users and why you collect it; 
   - identifying the legal grounds for collecting this data (arguably, consent of users who register on your site, or potentially compliance with contractual obligations [See: [Article 6(2)](https://gdpr-info.eu/art-6-gdpr/)];
   - providing details about who you are as the controller, including some contact information and categories of services you're sharing data with; 
@@ -145,8 +145,8 @@ As a controller you've got many obligations, beyond just the standard boilerplat
 Depending on where you're based (or where the server is hosted) you may have data residency/localisation or sovereignity requirements. Essentially, you may be governed by your own country's laws, which may include strict obligations to store information in that country (if targeting users of that country), or to permit government access. 
 #### 3. Using your instance for legally dubious purposes
 If your instance is large, engages in activities that are legally suspect in your jurisdiction (loli, CSAM, drugs, warez, terrorism, etc.), you may need to think about how you will respond to a government request for data about individuals on your service. This is pretty unlikely for small services, but it absolutely is a concern that shouldn't be wholly overlooked.[^7]  The bigger you get, and the more users you have, the greater the risk. 
-#### 4. Data portability
-Interestingly, one of the data subject rights, portability, is already built into the Mastodon protocol, at least with regard to moving profiles, so you can tick that box. 
+#### 4. Data portability & automated deletion of posts
+Interestingly, two data subject rights, portability and deletion, are already built into the Mastodon protocol, at least with regard to moving profiles and allowing users to set up deletion of posts in an automated fashion, so you can tick that box. Honestly, these features are delightful, and I wish the other sites incorporated this by default.  
 #### 5. Building in privacy-enhancing tech
 Advanced users (or the designers of the Mastodon Protocol/ActivityPub) should seriously evaluate and work towards E2EE systems, particularly with regard to individual and group DMs. It will solve many problems, and actually elevate Mastodon from a privacy-preserving perspective. 
 
@@ -154,6 +154,15 @@ For an idea of what a good privacy notice looks like with regard to Mastodon ins
 
 ## Some Parting Thoughts
 There's still a lot of unknowns when it comes to Mastodon, and a degdree of regulatory uncertainty. Even just focusing on the EU, given that **regulators** like the [European Data Protection Supervisor](https://social.network.europa.eu/about) and the [Bavarian Data Protection Authority](https://social.bund.de/@BayLfD) are _both_ running Mastodon instances, operators should take some comfort that the big regulatory hammers are unlikely to fall ... at least for now. The point of this guide is to help operators and admins _think_ about data protection and privacy concerns, help the community improve on what's in place, and build a thriving, privacy-preserving system together. 
+
+Unlike FB or Twitter, or any of the centralized services, the law will need to figure out just how far 'consent' can be used as a legal basis. As Jon Watson notes on [his blog](https://jonwatson.substack.com/p/privacy-and-the-fediverse-aka-mastodon-pleroma-and-friendicas-a0eca1f5301c), 
+> _my public posts on HT go to thousands of other instances that I do not have a relationship with. I don’t have any agreement with the admins of those other instances and those admins aren’t required to uphold the terms of service of the instance I do have a relationship with, Hackers.Town._
+
+Users have no real way to ensure that their personal toots/bio information aren't being shared with dodgy instance operators who don't care about privacy or user rights. Some of this may end up falling back on the instance admins (as controllers) to take action against abuses. 
+
+No individual instance admin can solve this problem, unless they defederate, but then, one asks what's the point of a fediverse that isn't connected? It's going to take a lot of community development and dialogue, and user awareness to square this circle.
+
+
 
 [^1]: gdpr-info.eu is a very helpful source, but it is not the authoritative source. That said, I use it a lot because it's MUCH cleaner and easier to search compared to the legislation itself, which can be found here: [REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL](https://eur-lex.europa.eu/eli/reg/2016/679/oj). 
 [^2]: Most GDPR definitions can be found under Article 4: [Article 4](https://gdpr-info.eu/art-4-gdpr/)
@@ -164,6 +173,6 @@ There's still a lot of unknowns when it comes to Mastodon, and a degdree of regu
 
 Based on the kinds of leeway that admins of instances get, and some recent decisions, notably the 2019 _Fashion ID_ case (CJEU, C-40/17 - Fashion ID), instance admins are _likely_ to be seen as controllers or at least joint controllers.  
 
-[^6]: I absolutely get that this is hard, because once data is shared with other servers/users, it may be effectively impossible to claw it back. ## I would love some additional insights here on the standards to provide a better set of suggestions. 
+[^6]: I absolutely get that this is hard, because once data is shared with other servers/users, it may be effectively impossible to claw it back or delete it. This will require further development in the standard in order to effectively implement deletion.  //**note** I would love some additional insights here on the standards to provide a better set of suggestions. 
 [^7] Given how some locations like the US are turning ever hostile towards the rights of LGBTQ+ people and women seeking reproductive care, these concerns may also extend if you're operating a support/dating network, or an 'underground railroad' type service for women seeking reproductive care. 
 [^8]: For example, they rely on a law that is totally inapplicable to non-EU institutions and government bodies (https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.L_.2018.295.01.0039.01.ENG&toc=OJ:L:2018:295:TOC) 
