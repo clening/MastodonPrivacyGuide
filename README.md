@@ -28,9 +28,70 @@ A guide on data protection obligations, challenges & pitfalls for Mastodon Users
 
   
 ## Who Are You and Why Should I Trust You?
-Name is Carey (@privacat@freeradical.zone / @privacat on the Birdsite) and I am an External Data Protection Consultant, researcher, and general buzzkill who focuses on helping organisations and individuals understand and comply with data protection laws. I work for a small outfit out of Dublin, Ireland, [Castlebridge](castlebridge.ie).
+Name is Carey (@privacat@freeradical.zone / @privacat on the Birdsite) and I am an External Data Protection Consultant, researcher, and general buzzkill who focuses on helping organisations and individuals understand and comply with data protection laws. I work for a small outfit out of Dublin, Ireland, [Castlebridge](castlebridge.ie). You can read more about my background [here]
 
-I've been in this space for a few years now, and like to think I know my way around data protection and privacy. That said, I am a consultant, and not a lawyer. **This is not, and should never be considered legal advice**. More like a helpful guide. A few caveats:
+
+
+## Scope
+
+This is both a guide & a general backgrounder/crash course on data protection law. 
+
+It's primarily targeted at Mastodon instance owners (the folks who run the instances) and users, but much of the elements will likely also apply to other #fediverse services (Matrix, Misskey, Pleroma, Pixelfeed, etc.)
+
+I am primarily considering this from the EU POV, so the citations will heavily skew towards the EU and UK General Data Protection Regulation [GDPR] (gdpr-info.eu) [^1]. That said, if there's interest, I'll attempt to supplement this document for territorial-specific rules (maybe).
+
+## But I Thought the GDPR (etc) Doesn't Apply to Me
+
+I hate to say it, but it probably does. **Tl;Dr** the GDPR (and many data protection laws) have wide territorial scope and reach, so they often apply to a whole host of activities and types of information that aren't always obvious, and even if you, yourself are not doing anything with data in the EU. 
+
+Essentially, the GDPR applies to you if: 
+1. You are doing stuff with data about people. This is known as [processing](#wtf-is-processing). 
+2. The data about people you're doing stuff with can identify (or, with other information, make someone identifiable), and those people (also known as [data subjects](#whats-a-data-subject), are in the EU. This is referred to as [personal data](#isnt-personal-data-just-pii-and-stuff-im-not-collecting-any-of-that-).  
+
+
+## Okay. The Data Protection Laws May Apply. Now What?
+
+Things to Consider
+
+#### 1. General obligations of controllers
+As a controller you've got many obligations, beyond just the standard boilerplate Mastodon Privacy Notice. Controllers must, at a minimum you need to ensure that adequate 'technical and organisational' measures are in place to meet obligations under the GDPR. In simple terms, that means things like
+  - securing data in transit and at rest; 
+  - ensuring that access controls and authorisation are strong (strong passwords, limits on access by others to personal data of your users);
+  - appropriate auditing and logging of data; 
+  - limiting (to the extent possible) how long data is retained and stored on your system and for how long. This is especially true for things like IP addresses, deleted content/accounts, cookie data, etc. Essentially, if you don't need to keep it, treat it like hazardous waste and destroy it; [^6]
+  - clearly defining what types of data you collect about your users and why you collect it; 
+  - identifying the legal grounds for collecting this data (arguably, consent of users who register on your site, or potentially compliance with contractual obligations [See: [Article 6(2)](https://gdpr-info.eu/art-6-gdpr/)];
+  - providing details about who you are as the controller, including some contact information and categories of services you're sharing data with; 
+  - setting up processes to handle Data Subject Requests (including access, rectification, deletion and objections to processing) under Articles 15-22; 
+  - setting up processes to handle and respond to data breaches under Articles 33-34, including notifying relevant regulators and data subjects;
+  - setting up appropriate policies and procedures for complying; 
+  - ensuring that contracts are in place when transferring data (for example, if you host on AWS, GCP, Azure, etc.);
+  - ensuring confidentiality, availability, integrity, and even resiliency of data. 
+  
+#### 2. Data residency/sovereignity issues
+Depending on where you're based (or where the server is hosted) you may have data residency/localisation or sovereignity requirements. Essentially, you may be governed by your own country's laws, which may include strict obligations to store information in that country (if targeting users of that country), or to permit government access. 
+#### 3. Using your instance for legally dubious purposes
+If your instance is large, engages in activities that are legally suspect in your jurisdiction (loli, CSAM, drugs, warez, terrorism, etc.), you may need to think about how you will respond to a government request for data about individuals on your service. This is pretty unlikely for small services, but it absolutely is a concern that shouldn't be wholly overlooked.[^7]  The bigger you get, and the more users you have, the greater the risk. 
+#### 4. Data portability & automated deletion of posts
+Interestingly, two data subject rights, portability and deletion, are already built into the Mastodon protocol, at least with regard to moving profiles and allowing users to set up deletion of posts in an automated fashion, so you can tick that box. Honestly, these features are delightful, and I wish the other sites incorporated this by default.  
+#### 5. Building in privacy-enhancing tech
+Advanced users (or the designers of the Mastodon Protocol/ActivityPub) should seriously evaluate and work towards E2EE systems, particularly with regard to individual and group DMs. It will solve many problems, and actually elevate Mastodon from a privacy-preserving perspective. 
+
+For an idea of what a good privacy notice looks like with regard to Mastodon instances, you might consider the [EDPS' Privacy Notice](https://social.network.europa.eu/terms). I wouldn't advise relying on it entirely, as much of this will be unique to the EDPS, but it is a good starting point![^8] 
+
+## Some Parting Thoughts
+There's still a lot of unknowns when it comes to Mastodon, and a degdree of regulatory uncertainty. Even just focusing on the EU, given that **regulators** like the [European Data Protection Supervisor](https://social.network.europa.eu/about) and the [Bavarian Data Protection Authority](https://social.bund.de/@BayLfD) are _both_ running Mastodon instances, operators should take some comfort that the big regulatory hammers are unlikely to fall ... at least for now. The point of this guide is to help operators and admins _think_ about data protection and privacy concerns, help the community improve on what's in place, and build a thriving, privacy-preserving system together. 
+
+Unlike FB or Twitter, or any of the centralized services, the law will need to figure out just how far 'consent' can be used as a legal basis. As Jon Watson notes on [his blog](https://jonwatson.substack.com/p/privacy-and-the-fediverse-aka-mastodon-pleroma-and-friendicas-a0eca1f5301c), 
+> _my public posts on HT go to thousands of other instances that I do not have a relationship with. I don’t have any agreement with the admins of those other instances and those admins aren’t required to uphold the terms of service of the instance I do have a relationship with, Hackers.Town._
+
+Users have no real way to ensure that their personal toots/bio information aren't being shared with dodgy instance operators who don't care about privacy or user rights. Some of this may end up falling back on the instance admins (as controllers) to take action against abuses. 
+
+No individual instance admin can solve this problem, unless they defederate, but then, one asks what's the point of a fediverse that isn't connected? It's going to take a lot of community development and dialogue, and user awareness to square this circle.
+
+## About Me (expanded)
+
+Aside from being a rando on the internet, I've been in this space for a few years now, and like to think I know my way around data protection and privacy. That said, I am a consultant, and not a lawyer. **This is not, and should never be considered legal advice**. More like a helpful guide. A few caveats:
 - I do not know all the laws around the world. Therefore, if you're outside of the EU/US, your local laws are controlling.
 - This is designed to offer general guidance, not specific legal advice. If you've got some sort of exotic arrangement on your federated service, best to talk to someone about it, and not just trust some rando on the internet.
 - I try to cite to sources as much as possible. But you should, when practical, also read those sources and not just trust some rando on the internet.
@@ -39,18 +100,13 @@ I've been in this space for a few years now, and like to think I know my way aro
 
 > **Gonna say this again: I am not a lawyer. I am not your lawyer. This is not legal advice**.
 
-## Scope
+# APPENDIX (Definitions, Details, Footnotes, etc.)
 
-This guide is primarily targeted at Mastodon instance owners (the folks who run the instances) and users, but much of the elements will likely also apply to other #fediverse services (Matrix, Misskey, Pleroma, Pixelfeed, etc.)
-
-I am primarily considering this from the EU POV, so the citations will heavily skew towards the EU and UK General Data Protection Regulation [GDPR] (gdpr-info.eu) [^1]. 
+## Territoriality of the GDPR
 
 The GDPR has what's known in legal dork circles as wide subject matter & territorial scope (Art. 1, Art. 3), and so it generally applies to a wider class of people and organisations than do other laws (like the California Consumer Privacy Act, or China's Personal Information Protection Law (PIPL)).
 
-That said, if there's interest, I'll attempt to supplement this document for territorial-specific rules (maybe).
 
-## But I Thought the GDPR (etc) Doesn't Apply to Me
-As I mentioned in the Scope section, I hate to say it, but it probably does. Let me explain.
 
 [Article 1 GDPR](https://gdpr-info.eu/art-1-gdpr/) defines the subject matter of what's protected under the GDPR. Namely:
 > This Regulation lays down rules relating to the protection of **natural persons** with regard to the **processing** of **personal data** and rules relating to the free movement of personal data.
@@ -120,47 +176,6 @@ Establishment is fancy legal term for where your organisation is based in the wo
 ### Monitoring Behavior? 
 Generally, this isn't applicable yet, so I'll update this when Mastodon gets exciting. 
 
-
-## Okay. The Data Protection Laws May Apply. Now What?
-### It's way more than just a privacy policy ... 
-
-Things to Consider
-
-#### 1. General obligations of controllers
-As a controller you've got many obligations, beyond just the standard boilerplate Mastodon Privacy Notice. Controllers must, at a minimum you need to ensure that adequate 'technical and organisational' measures are in place to meet obligations under the GDPR. In simple terms, that means things like
-  - securing data in transit and at rest; 
-  - ensuring that access controls and authorisation are strong (strong passwords, limits on access by others to personal data of your users);
-  - appropriate auditing and logging of data; 
-  - limiting (to the extent possible) how long data is retained and stored on your system and for how long. This is especially true for things like IP addresses, deleted content/accounts, cookie data, etc. Essentially, if you don't need to keep it, treat it like hazardous waste and destroy it; [^6]
-  - clearly defining what types of data you collect about your users and why you collect it; 
-  - identifying the legal grounds for collecting this data (arguably, consent of users who register on your site, or potentially compliance with contractual obligations [See: [Article 6(2)](https://gdpr-info.eu/art-6-gdpr/)];
-  - providing details about who you are as the controller, including some contact information and categories of services you're sharing data with; 
-  - setting up processes to handle Data Subject Requests (including access, rectification, deletion and objections to processing) under Articles 15-22; 
-  - setting up processes to handle and respond to data breaches under Articles 33-34, including notifying relevant regulators and data subjects;
-  - setting up appropriate policies and procedures for complying; 
-  - ensuring that contracts are in place when transferring data (for example, if you host on AWS, GCP, Azure, etc.);
-  - ensuring confidentiality, availability, integrity, and even resiliency of data. 
-  
-#### 2. Data residency/sovereignity issues
-Depending on where you're based (or where the server is hosted) you may have data residency/localisation or sovereignity requirements. Essentially, you may be governed by your own country's laws, which may include strict obligations to store information in that country (if targeting users of that country), or to permit government access. 
-#### 3. Using your instance for legally dubious purposes
-If your instance is large, engages in activities that are legally suspect in your jurisdiction (loli, CSAM, drugs, warez, terrorism, etc.), you may need to think about how you will respond to a government request for data about individuals on your service. This is pretty unlikely for small services, but it absolutely is a concern that shouldn't be wholly overlooked.[^7]  The bigger you get, and the more users you have, the greater the risk. 
-#### 4. Data portability & automated deletion of posts
-Interestingly, two data subject rights, portability and deletion, are already built into the Mastodon protocol, at least with regard to moving profiles and allowing users to set up deletion of posts in an automated fashion, so you can tick that box. Honestly, these features are delightful, and I wish the other sites incorporated this by default.  
-#### 5. Building in privacy-enhancing tech
-Advanced users (or the designers of the Mastodon Protocol/ActivityPub) should seriously evaluate and work towards E2EE systems, particularly with regard to individual and group DMs. It will solve many problems, and actually elevate Mastodon from a privacy-preserving perspective. 
-
-For an idea of what a good privacy notice looks like with regard to Mastodon instances, you might consider the [EDPS' Privacy Notice](https://social.network.europa.eu/terms). I wouldn't advise relying on it entirely, as much of this will be unique to the EDPS, but it is a good starting point![^8] 
-
-## Some Parting Thoughts
-There's still a lot of unknowns when it comes to Mastodon, and a degdree of regulatory uncertainty. Even just focusing on the EU, given that **regulators** like the [European Data Protection Supervisor](https://social.network.europa.eu/about) and the [Bavarian Data Protection Authority](https://social.bund.de/@BayLfD) are _both_ running Mastodon instances, operators should take some comfort that the big regulatory hammers are unlikely to fall ... at least for now. The point of this guide is to help operators and admins _think_ about data protection and privacy concerns, help the community improve on what's in place, and build a thriving, privacy-preserving system together. 
-
-Unlike FB or Twitter, or any of the centralized services, the law will need to figure out just how far 'consent' can be used as a legal basis. As Jon Watson notes on [his blog](https://jonwatson.substack.com/p/privacy-and-the-fediverse-aka-mastodon-pleroma-and-friendicas-a0eca1f5301c), 
-> _my public posts on HT go to thousands of other instances that I do not have a relationship with. I don’t have any agreement with the admins of those other instances and those admins aren’t required to uphold the terms of service of the instance I do have a relationship with, Hackers.Town._
-
-Users have no real way to ensure that their personal toots/bio information aren't being shared with dodgy instance operators who don't care about privacy or user rights. Some of this may end up falling back on the instance admins (as controllers) to take action against abuses. 
-
-No individual instance admin can solve this problem, unless they defederate, but then, one asks what's the point of a fediverse that isn't connected? It's going to take a lot of community development and dialogue, and user awareness to square this circle.
 
 
 
