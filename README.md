@@ -2,14 +2,30 @@
 
 A guide on data protection obligations, challenges & pitfalls for Mastodon Users & Instance owners / admins.
 
-[MastodonPrivacyGuide](#mastodonprivacyguide)
-  * [Who Are You and Why Should I Trust You?](#who-are-you-and-why-should-i-trust-you)
-  * [Scope](#scope)
-  * [But I Thought the GDPR (etc) Doesn't Apply to Me](#but-i-thought-the-gdpr--etc--doesn-t-apply-to-me)
-    + [What is Processing?](#what-is-processing)
-  * [Well This is Harshing My Mellow](#well-this-is-harshing-my-mellow)
-  * [Fine, Fine. The Data Protection Laws May Apply. Now What?](#fine--fine-the-data-protection-laws-may-apply-now-what)
-  * 
+# Table of Contents
+
+- [Mastodon Privacy Guide V.1.0](#mastodon-privacy-guide-v10)
+- [Table of contents](#table-of-contents)
+  - [Who Are You and Why Should I Trust You?](#who-are-you-and-why-should-i-trust-you)
+  - [Scope](#scope)
+  - [But I Thought the GDPR (etc) Doesn't Apply to Me](#but-i-thought-the-gdpr-etc-doesnt-apply-to-me)
+  - [Some Relevant Definitions](#some-relevant-definitions)
+    - [Isn't Personal Data Just PII and Stuff? I'm not Collecting Any of That...](#isnt-personal-data-just-pii-and-stuff-im-not-collecting-any-of-that)
+    - [WTF is Processing?](#wtf-is-processing)
+    - [Controllers & Processors, how do they work?](#controllers--processors-how-do-they-work)
+      - [A few examples](#a-few-examples)
+    - [What's a Data Subject?](#whats-a-data-subject)
+    - [What the hell does Establishment mean?](#what-the-hell-does-establishment-mean)
+    - [Monitoring Behavior?](#monitoring-behavior)
+  - [Okay. The Data Protection Laws May Apply. Now What?](#okay-the-data-protection-laws-may-apply-now-what)
+    - [It's way more than just a privacy policy ...](#its-way-more-than-just-a-privacy-policy-)
+      - [1. General obligations of controllers](#1-general-obligations-of-controllers)
+      - [2. Data residency/sovereignity issues](#2-data-residencysovereignity-issues)
+      - [3. Using your instance for legally dubious purposes](#3-using-your-instance-for-legally-dubious-purposes)
+      - [4. Data portability](#4-data-portability)
+      - [5. Building in privacy-enhancing tech](#5-building-in-privacy-enhancing-tech)
+
+  
 ## Who Are You and Why Should I Trust You?
 Name is Carey (@privacat@freeradical.zone / @privacat on the Birdsite) and I am an External Data Protection Consultant, researcher, and general buzzkill who focuses on helping organisations and individuals understand and comply with data protection laws. I work for a small outfit out of Dublin, Ireland, [Castlebridge](castlebridge.ie).
 
@@ -49,7 +65,8 @@ All of that is legal speak for the fact that the law covers how data is handled 
 > - the offering of goods or services, **irrespective of whether a payment of the data subject is required**, to such data subjects in the Union; or
 > - the **monitoring of their behaviour** as far as their behaviour takes place within the Union.
 
-## Some Relevant Definitions [^2] 
+## Some Relevant Definitions 
+[^2] 
 
 ### Isn't Personal Data Just PII and Stuff? I'm not Collecting Any of That... 
 Unlike in the States, 'personal data' has a very broad definition: 
@@ -87,7 +104,7 @@ Processors basically act on the instructions of the controllers.
 
 So, a few important notes: 1) This doesn't just apply to big behemoth companies. **Anyone** can be a controller and/or a processor (in fact, there's caselaw on this). 2) the concept of determining 'purposes and means' (controllership) is complicated, but in essence, a way to think about it is the person/body who is making decisions about how data is being used/stored/collected/shared/disseminated etc. 3) Controllership can be shared - it's not always a 100% decisionmaking thing. So, if you run an instance, you make decisions about how personal data is processed for your instance, but other instance admins make similar processing decisions for their instance,  that would make you both controllers (along with the users!). 
 
-**A few examples**: 
+#### A few examples  
 1. You decided that you wanted to run a Mastodon instance and allow random users to join.[^5] 
 2. You decide what servers you want to federate with or defederate from. That is making a decision about the means of processing. 
 3. You set policy that requires individuals provide additional information about themselves (e.g., an LGBTQ+ site requiring disclosure of sexual orientation, a country-based site requiring informaiton on where a person is based)
@@ -108,7 +125,8 @@ Generally, this isn't applicable yet, so I'll update this when Mastodon gets exc
 
 Things to Consider
 
-1. As a controller you've got many obligations, beyond just the standard boilerplate Mastodon Privacy Notice. Controllers must, at a minimum you need to ensure that adequate 'technical and organisational' measures are in place to meet obligations under the GDPR. In simple terms, that means things like
+#### 1. General obligations of controllers
+As a controller you've got many obligations, beyond just the standard boilerplate Mastodon Privacy Notice. Controllers must, at a minimum you need to ensure that adequate 'technical and organisational' measures are in place to meet obligations under the GDPR. In simple terms, that means things like
   - securing data in transit and at rest; 
   - ensuring that access controls and authorisation are strong (strong passwords, limits on access by others to personal data of your users);
   - appropriate auditing and logging of data; 
@@ -122,10 +140,14 @@ Things to Consider
   - ensuring that contracts are in place when transferring data (for example, if you host on AWS, GCP, Azure, etc.);
   - ensuring confidentiality, availability, integrity, and even resiliency of data. 
   
-2. Depending on where you're based (or where the server is hosted) you may have data residency/localisation or sovereignity requirements. Essentially, you may be governed by your own country's laws, which may include strict obligations to store information in that country (if targeting users of that country), or to permit government access. 
-3. If your instance is large, engages in activities that are legally suspect in your jurisdiction (loli, CSAM, drugs, warez, terrorism, etc.), you may need to think about how you will respond to a government request for data about individuals on your service. This is pretty unlikely for small services, but it absolutely is a concern that shouldn't be wholly overlooked.[^7]  The bigger you get, and the more users you have, the greater the risk. 
-4. Interestingly, one of the data subject rights, portability, is already built into the Mastodon protocol, at least with regard to moving profiles, so you can tick that box. 
-5. Advanced users (or the designers of the Mastodon Protocol/ActivityPub) should seriously evaluate and work towards E2EE systems, particularly with regard to individual and group DMs. It will solve many problems, and actually elevate Mastodon from a privacy-preserving perspective. 
+#### 2. Data residency/sovereignity issues
+Depending on where you're based (or where the server is hosted) you may have data residency/localisation or sovereignity requirements. Essentially, you may be governed by your own country's laws, which may include strict obligations to store information in that country (if targeting users of that country), or to permit government access. 
+#### 3. Using your instance for legally dubious purposes
+If your instance is large, engages in activities that are legally suspect in your jurisdiction (loli, CSAM, drugs, warez, terrorism, etc.), you may need to think about how you will respond to a government request for data about individuals on your service. This is pretty unlikely for small services, but it absolutely is a concern that shouldn't be wholly overlooked.[^7]  The bigger you get, and the more users you have, the greater the risk. 
+#### 4. Data portability
+Interestingly, one of the data subject rights, portability, is already built into the Mastodon protocol, at least with regard to moving profiles, so you can tick that box. 
+#### 5. Building in privacy-enhancing tech
+Advanced users (or the designers of the Mastodon Protocol/ActivityPub) should seriously evaluate and work towards E2EE systems, particularly with regard to individual and group DMs. It will solve many problems, and actually elevate Mastodon from a privacy-preserving perspective. 
 
 For an idea of what a good privacy notice looks like with regard to Mastodon instances, you might consider the [EDPS' Privacy Notice](https://social.network.europa.eu/terms). I wouldn't advise relying on it entirely, as much of this will be unique to the EDPS, but it is a good starting point![^8] 
 
