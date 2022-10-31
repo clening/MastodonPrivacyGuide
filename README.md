@@ -56,13 +56,13 @@ Essentially, the GDPR applies to you if:
 **In plain English:** If you are collecting, using, storing, sharing, transferring, selling, or generally making use of personal data on a computer (or physically), you're probably 'doing stuff' with data in some way. You're [processing](#wtf-is-processing) data.  
 
 Common Fedi examples of processing would include: 
-    1. Your instance **collects and stores** user information such as email address, userid, IP address, biographical information, photos of data subjects, etc.
-    2. Your instance **collects and stores** all those lovely toots. 
-    3. Based on how Mastodon works, your servers automatically perform various operations on the data (checking for spam, blocking Nazis) (**restricting data, erasing data**)
-    4. By virtue of being #federated, your instance **shares, transmits, and disseminates** personal data about users and their toots with _other_ users across systems (unless you defederate from everyone).
-    5. By allowing users to Boost, comment on, bookmark or link to profiles or toots your instance is **adapting and altering** that personal information. 
-    6. If you've got any sort of analytics going (Google Analytics, or even Matomo), you're likely **collecting, storing, transmitting, and using** device IDs, advertising IDs, IP information and other details about visitors to your site. 
-    7. By storing any of this on a server somewhere that's not your own, you're also **transmitting** personal data.
+- Your instance **collects and stores** user information such as email address, userid, IP address, biographical information, photos of data subjects, etc.
+- Your instance **collects and stores** all those lovely toots. 
+- Based on how Mastodon works, your servers automatically perform various operations on the data (checking for spam, blocking Nazis) (**restricting data, erasing data**)
+- By virtue of being #federated, your instance **shares, transmits, and disseminates** personal data about users and their toots with _other_ users across systems (unless you defederate from everyone).
+- By allowing users to Boost, comment on, bookmark or link to profiles or toots your instance is **adapting and altering** that personal information.
+- If you've got any sort of analytics going (Google Analytics, or even Matomo), you're likely **collecting, storing, transmitting, and using** device IDs, advertising IDs, IP information and other details about visitors to your site. 
+- By storing any of this on a server somewhere that's not your own, you're also **transmitting** personal data.
 
 So yeah, you're 100% absolutely processing data. Sorry champ. 
 
