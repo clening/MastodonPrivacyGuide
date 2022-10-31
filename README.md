@@ -1,4 +1,4 @@
-# MastodonPrivacyGuide
+# Mastodon Privacy Guide
 
 A guide on data protection obligations, challenges & pitfalls for Mastodon Users & Instance owners / admins.
 
@@ -80,28 +80,33 @@ So yeah, you're 100% absolutely processing data. Sorry champ.
 Controllers and processors have legal meaning. A controller is: 
 > ... the **natural or legal person**, public authority, agency or other body which, alone or jointly with others, determines the **purposes and means of the processing** of personal data; where the purposes and means of such processing are determined by Union or Member State law, the controller or the specific criteria for its nomination may be provided for by Union or Member State law. 
 
-So, a few important notes: 1) This doesn't just apply to big behemoth companies. Anyone can be a controller (in fact, there's caselaw on this). 2) the concept of determining 'purposes and means' is complicated, but in essence, a way to think about it is the person/body who is making decisions about how data is being used/stored/collected/shared/disseminated etc. 
+A processor is: 
+> ... a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller.
+
+Processors basically act on the instructions of the controllers. 
+
+So, a few important notes: 1) This doesn't just apply to big behemoth companies. **Anyone** can be a controller and/or a processor (in fact, there's caselaw on this). 2) the concept of determining 'purposes and means' (controllership) is complicated, but in essence, a way to think about it is the person/body who is making decisions about how data is being used/stored/collected/shared/disseminated etc. 3) Controllership can be shared - it's not always a 100% decisionmaking thing. So, if you run an instance, you make decisions about how personal data is processed for your instance, but other instance admins make similar processing decisions for their instance,  that would make you both controllers (along with the users!). 
 
 **A few examples**: 
 1. You decided that you wanted to run a Mastodon instance and allow random users to join.[^5] 
-2. You decide what servers you want to federate with or defederate. That is making a decision about the means of processing. 
-3. 
+2. You decide what servers you want to federate with or defederate from. That is making a decision about the means of processing. 
+3. You set policy that requires individuals provide additional information about themselves (e.g., an LGBTQ+ site requiring disclosure of sexual orientation, a country-based site requiring informaiton on where a person is based)
+4. You derive something from the data maintained on your instance
 
 ### What's a Data Subject? 
 As noted above, a data subject or natural person is a human being, usually one who's still alive who is based in the EU. Even if the person is just visiting the EU, or isn't an EU citizen, that still counts. In the US, the CCPA and various other CCPA-like laws apply similar definitions to data subjects based in those respective jurisdictions.  
 
 ### What the hell does Establishment mean? 
+Establishment is fancy legal term for where your organisation is based in the world. Or in scary legal, it's where you say you're operating from such that a court could sue you there. 
 
 ### Monitoring Behavior? 
+Generally, this isn't applicable yet, so I'll update this when Mastodon gets exciting. 
 
 
-
-
-## Well This is Harshing My Mellow
-
-## Fine, Fine. The Data Protection Laws May Apply. Now What?
+## Okay. The Data Protection Laws May Apply. Now What?
 Things to Consider
-1. It's more than just a Privacy Notice/Policy
+
+1. As a controller you've got many obligations. Even  - It's more than just a Privacy Notice/Policy
 2.
 
 [^1]: gdpr-info.eu is a very helpful source, but it is not the authoritative source. That said, I use it a lot because it's MUCH cleaner and easier to search compared to the legislation itself, which can be found here: [REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL](https://eur-lex.europa.eu/eli/reg/2016/679/oj). 
