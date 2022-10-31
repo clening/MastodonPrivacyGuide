@@ -145,7 +145,7 @@ Unlike in the States, 'personal data' has a very broad definition:
 
 The key words here are bolded. Anything that identifies, or can identify (with other information) a person. A natural person is fancy lawyer for "a living, breathing human being".[^7]
 
-Identifiability is a core concept in the GDPR, and is quite broad. There are cases that note that even something like a dynamic IP address, Google Analytics IDs, or information about a person's spouse constitutes identifiable informaiton about a data subject.[^8] 
+Identifiability is a core concept in the GDPR, and is quite broad. There are cases that note that even something like a dynamic IP address, Google Analytics IDs, or information about a person's spouse constitutes identifiable informaiton about a data subject.[^8]  
 
 People share a lot in toots - details about their sexuality and sexual orientation, health information (including mental and physical health), contact information, others they associate with, their dates of birth, photos... 
 
@@ -168,7 +168,7 @@ So, a few important notes:
   3. Controllership can be shared - it's not always a 100% decisionmaking thing. So, if you run an instance, you make decisions about how personal data is processed for your instance, but other instance admins make similar processing decisions for their instance,  that would make you both controllers (along with the users!). 
 
 #### You might be a controller if...  
-  1. You decided that you wanted to run a Mastodon instance and allow random users to join.[^9] 
+  1. You decided that you wanted to run a Mastodon instance and allow random users to join. [^9] 
   2. You decide what servers you want to federate with or defederate from. That is making a decision about the means of processing. 
   3. You set policy that requires individuals provide additional information about themselves (e.g., an LGBTQ+ site requiring disclosure of sexual orientation, a country-based site requiring informaiton on where a person is based)
   4. You derive something from the data maintained on your instance
@@ -181,10 +181,10 @@ The GDPR (and CCPA and other laws) identify a number of rights of the data subje
 1. **Access** (aka, 'Download my Data'), but this also includes details about how the controller uses their data, who the controller shares the data with, details on retention, and a whole lot of other stuff. [Article 15](https://gdpr-info.eu/art-15-gdpr/)
 2. **Correction** (or 'Rectification') of incorrect or inaccurate informational data. [Article 16](https://gdpr-info.eu/art-16-gdpr/)
 3. **Erasure** (sometimes known as the 'Right to be Forgotten') of data in certain cases [Article 17](https://gdpr-info.eu/art-17-gdpr/). To a limited extent, deletion is already somewhat built into Mastodon (users can automatically have posts deleted, or they can delete their account), but it's not fool-proof.    
-4. **Restriction on processing** This has some restrictions, and it generally applies when the controller is doing dodgy things with personal data and not being upfront with data subjects [Article 18]((https://gdpr-info.eu/art-18-gdpr/)
-5. **Data Portability** This means sharing personal data with the data subject in a 'structured, commonly used and machine-readable format' that can be shared elsewhere. Interestingly, this right is already baked into the Mastodon protocol, at least with regard to moving profiles. [Article 20]((https://gdpr-info.eu/art-20-gdpr/)
-6. **Objection** Depending on the lawful basis you go with (notably, legitimate interests), or if you're processing data like cookies for marketing purposes, a data subject can object to that processing and you've gotta stop doing it. You can't kick them off the service either. [Article 21]((https://gdpr-info.eu/art-21-gdpr/)
-7. **Objection to automated decision-making, incluidng profiling** People have a right not to be subject to a decision about them that could produce a legal or other significant effect about them. [Article 22]((https://gdpr-info.eu/art-22-gdpr/)
+4. **Restriction on processing** This has some restrictions, and it generally applies when the controller is doing dodgy things with personal data and not being upfront with data subjects [Article 18](https://gdpr-info.eu/art-18-gdpr/)
+5. **Data Portability** This means sharing personal data with the data subject in a 'structured, commonly used and machine-readable format' that can be shared elsewhere. Interestingly, this right is already baked into the Mastodon protocol, at least with regard to moving profiles. [Article 20](https://gdpr-info.eu/art-20-gdpr/)
+6. **Objection** Depending on the lawful basis you go with (notably, legitimate interests), or if you're processing data like cookies for marketing purposes, a data subject can object to that processing and you've gotta stop doing it. You can't kick them off the service either. [Article 21](https://gdpr-info.eu/art-21-gdpr/)
+7. **Objection to automated decision-making, incluidng profiling** People have a right not to be subject to a decision about them that could produce a legal or other significant effect about them. [Article 22](https://gdpr-info.eu/art-22-gdpr/)
 
 Data subject rights require that you communicate with the data subject in a timely manner (usually by one month), and you can't generally object just because it's a time-consuming PITA. Many of these laws are carried over to other legal systems, so FYI. 
 
