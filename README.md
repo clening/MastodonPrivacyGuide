@@ -1,4 +1,4 @@
-# Mastodon Privacy Guide
+# Mastodon Privacy Guide V.1.0
 
 A guide on data protection obligations, challenges & pitfalls for Mastodon Users & Instance owners / admins.
 
@@ -104,23 +104,30 @@ Generally, this isn't applicable yet, so I'll update this when Mastodon gets exc
 
 
 ## Okay. The Data Protection Laws May Apply. Now What?
+### It's way more than just a privacy policy ... 
+
 Things to Consider
 
-1. As a controller you've got many obligations, beyond just the standard boilerplate Mastodon Privacy Notice. Controllers must, at a minimum: 
- a. Need to ensure that adequate 'technical and organisational' measures are in place to meet obligations under the GDPR. In simple terms, that means things like
+1. As a controller you've got many obligations, beyond just the standard boilerplate Mastodon Privacy Notice. Controllers must, at a minimum you need to ensure that adequate 'technical and organisational' measures are in place to meet obligations under the GDPR. In simple terms, that means things like
   - securing data in transit and at rest; 
   - ensuring that access controls and authorisation are strong (strong passwords, limits on access by others to personal data of your users);
   - appropriate auditing and logging of data; 
   - limiting (to the extent possible) how long data is retained and stored on your system and for how long; [^6]
   - clearly defining what types of data you collect about your users and why you collect it; 
   - identifying the legal grounds for collecting this data (arguably, consent of users who register on your site, or potentially compliance with contractual obligations [See: [Article 6(2)](https://gdpr-info.eu/art-6-gdpr/)];
-  - providing details about who you are as the controller, including some contact information; 
+  - providing details about who you are as the controller, including some contact information and categories of services you're sharing data with; 
   - setting up processes to handle Data Subject Requests (including access, rectification, deletion and objections to processing) under Articles 15-22; 
   - setting up processes to handle and respond to data breaches under Articles 33-34, including notifying relevant regulators and data subjects;
   - setting up appropriate policies and procedures for complying; 
-  - ensuring that contracts are in place when transferring data (for example, if you host on AWS, GCP, Azure, etc.). 
-  - It's more than just a Privacy Notice/Policy
-3.
+  - ensuring that contracts are in place when transferring data (for example, if you host on AWS, GCP, Azure, etc.);
+  - ensuring confidentiality, availability, integrity, and even resiliency of data. 
+  
+2. Depending on where you're based (or where the server is hosted) you may have data residency/localisation or sovereignity requirements. Essentially, you may be governed by your own country's laws, which may include strict obligations to store information in that country (if targeting users of that country), or to permit government access. 
+3. If your instance is large, engages in activities that are legally suspect in your jurisdiction (loli, CSAM, drugs, warez, terrorism, etc.), you may need to think about how you will respond to a government request for data about individuals on your service. This is pretty unlikely for small services, but it absolutely is a concern that shouldn't be wholly overlooked.[^7]  The bigger you get, and the more users you have, the greater the risk. 
+4. Interestingly, one of the data subject rights, portability, is already built into the Mastodon protocol, at least with regard to moving profiles, so you can tick that box. 
+5. Advanced users (or the designers of the Mastodon Protocol/ActivityPub) should seriously evaluate and work towards E2EE systems, particularly with regard to individual and group DMs. It will solve many problems, and actually elevate Mastodon from a privacy-preserving perspective. 
+
+For an idea of what a good privacy notice looks like with regard to Mastodon instances, you might consider the [EDPS' Privacy Notice](https://social.network.europa.eu/terms). I wouldn't advise relying on it entirely, as much of this will be unique to the EDPS, but it is a good starting point![^8] 
 
 [^1]: gdpr-info.eu is a very helpful source, but it is not the authoritative source. That said, I use it a lot because it's MUCH cleaner and easier to search compared to the legislation itself, which can be found here: [REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL](https://eur-lex.europa.eu/eli/reg/2016/679/oj). 
 [^2]: Most GDPR definitions can be found under Article 4: [Article 4](https://gdpr-info.eu/art-4-gdpr/)
@@ -132,3 +139,5 @@ Things to Consider
 Based on the kinds of leeway that admins of instances get, and some recent decisions, notably the 2019 _Fashion ID_ case (CJEU, C-40/17 - Fashion ID), instance admins are _likely_ to be seen as controllers or at least joint controllers.  
 
 [^6]: I absolutely get that this is hard, because once data is shared with other servers/users, it may be effectively impossible to claw it back. ## I would love some additional insights here on the standards to provide a better set of suggestions. 
+[^7] Given how some locations like the US are turning ever hostile towards the rights of LGBTQ+ people and women seeking reproductive care, these concerns may also extend if you're operating a support/dating network, or an 'underground railroad' type service for women seeking reproductive care. 
+[^8]: For example, they rely on a law that is totally inapplicable to non-EU institutions and government bodies (https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.L_.2018.295.01.0039.01.ENG&toc=OJ:L:2018:295:TOC) 
