@@ -38,7 +38,7 @@ Name is Carey (@privacat@freeradical.zone / @privacat on the Birdsite) and I am 
 
 This is both a guide & a general backgrounder/crash course on data protection law. 
 
-It's primarily targeted at Mastodon instance owners (the folks who run the instances) and users, but much of the elements will likely also apply to other #fediverse services (Matrix, Misskey, Pleroma, Pixelfeed, etc.)
+It's primarily targeted at Mastodon instance owners (the folks who run the instances) and users, but much of the elements will likely also apply to other #fediverse services (Misskey, Pleroma, Pixelfeed, etc.)
 
 I am primarily considering this from the EU POV, so the citations will heavily skew towards the EU and UK General Data Protection Regulation [GDPR] (gdpr-info.eu) [^1]. That said, if there's interest, I'll attempt to supplement this document for territorial-specific rules (maybe).
 
@@ -97,7 +97,7 @@ Advanced users (or the designers of the Mastodon Protocol/ActivityPub) should se
 For an idea of what a good privacy notice looks like with regard to Mastodon instances, you might consider the [EDPS' Privacy Notice](https://social.network.europa.eu/terms). I wouldn't advise relying on it entirely, as much of this will be unique to the EDPS, but it is a good starting point![^4] 
 
 ## Some Parting Thoughts
-There's still a lot of unknowns when it comes to Mastodon, and a degdree of regulatory uncertainty. Even just focusing on the EU, given that **regulators** like the [European Data Protection Supervisor](https://social.network.europa.eu/about) and the [Bavarian Data Protection Authority](https://social.bund.de/@BayLfD) are _both_ running Mastodon instances, operators should take some comfort that the big regulatory hammers are unlikely to fall ... at least for now. The point of this guide is to help operators and admins _think_ about data protection and privacy concerns, help the community improve on what's in place, and build a thriving, privacy-preserving system together. 
+There's still a lot of unknowns when it comes to Mastodon, and a degree of regulatory uncertainty. Even just focusing on the EU, given that **regulators** like the [European Data Protection Supervisor](https://social.network.europa.eu/about) and the [Bavarian Data Protection Authority](https://social.bund.de/@BayLfD) are _both_ running Mastodon instances, operators should take some comfort that the big regulatory hammers are unlikely to fall ... at least for now. The point of this guide is to help operators and admins _think_ about data protection and privacy concerns, help the community improve on what's in place, and build a thriving, privacy-preserving system together. 
 
 Unlike FB or Twitter, or any of the centralized services, the law will need to figure out just how far 'consent' can be used as a [legal basis](#lawful-basis-how-does-it-work).[^5] 
 
